@@ -627,10 +627,6 @@ NSString *const XLFormSectionsRowsBindings = @"XLFormSectionsRowsBindings";
     return YES;
 }
 
-- (nonnull NSArray *)validateFormRows {
-    
-}
-
 #pragma mark - Utils
 
 - (NSArray<XLFormSectionDescriptor *> *)sections {
