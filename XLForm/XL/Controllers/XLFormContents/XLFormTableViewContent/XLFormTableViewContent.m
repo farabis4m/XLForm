@@ -314,7 +314,7 @@
         if ([fullIdentifier rangeOfString:@"Cell"].location == NSNotFound) {
             fullIdentifier = [NSString stringWithFormat:@"%@%@", fullIdentifier, @"TableViewCell"];
         }
-        NSBundle *bundle = [NSBundle bundleForClass:NSClassFromString(fullIdentifier)];
+        NSBundle *bundle = [NSBundle mainBundle];//[NSBundle bundleForClass:NSClassFromString(fullIdentifier)];
         if ([bundle pathForResource:fullIdentifier ofType:@"nib"]){
             return [[bundle loadNibNamed:fullIdentifier owner:nil options:nil] firstObject];
         }
