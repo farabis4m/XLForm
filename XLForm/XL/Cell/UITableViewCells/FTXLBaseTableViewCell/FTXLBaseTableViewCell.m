@@ -167,6 +167,11 @@ Class ClassFromString(NSString *className) {
                     [[self datePicker] setDate:self.rowDescriptor.value];
                 }
             }
+        } else if (self.rowDescriptor.selectionStyle == XLFormRowSelectionStylePicker && self.rowDescriptor.selectionType == XLFormRowSelectionTypePickerView) {
+            if(!self.rowDescriptor.value) {
+                self.rowDescriptor.value = [self.rowDescriptor.selectorOptions firstObject];
+            }
+            [self.formViewController.formContent ensureRowIsVisible:self.rowDescriptor];
         }
         result = [super becomeFirstResponder];
     }

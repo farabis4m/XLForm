@@ -138,9 +138,9 @@
 {
     UIView<XLFormDescriptorCell> *inlineCell = [inlineRowDescriptor cell];
     NSIndexPath * indexOfOutOfWindowCell = [self.formDescriptor indexPathOfFormRow:inlineRowDescriptor];
-    if(!inlineCell.window || (self.formView.contentOffset.y + self.formView.frame.size.height <= inlineCell.frame.origin.y + inlineCell.frame.size.height)){
+//    if(!inlineCell.window || (self.formView.contentOffset.y + self.formView.frame.size.height <= inlineCell.frame.origin.y + inlineCell.frame.size.height)){
         [self.formView scrollToRowAtIndexPath:indexOfOutOfWindowCell atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-    }
+//    }s
 }
 
 #pragma mark - XLTextInput delegate
