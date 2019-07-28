@@ -171,11 +171,17 @@ Class ClassFromString(NSString *className) {
             if(!self.rowDescriptor.value) {
                 self.rowDescriptor.value = [self.rowDescriptor.selectorOptions firstObject];
             }
-            [self.formViewController.formContent ensureRowIsVisible:self.rowDescriptor];
+            [self makeRowVisible];
         }
         result = [super becomeFirstResponder];
     }
     return result;
+}
+
+- (void)makeRowVisible {
+    UIView<XLFormDescriptorCell> *inlineCell = [self.rowDescriptor cell];
+    NSIndexPath *indexOutOfWindowCell = [self.formViewController.formContent.formDescriptor indexPathOfFormRow:self.rowDescriptor];
+    [self.formViewController.formContent.formView scrollToRowAtIndexPath:indexOutOfWindowCell atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 }
 
 - (BOOL)resignFirstResponder {
