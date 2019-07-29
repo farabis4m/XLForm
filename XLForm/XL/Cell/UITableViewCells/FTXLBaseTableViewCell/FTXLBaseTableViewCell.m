@@ -172,6 +172,8 @@ Class ClassFromString(NSString *className) {
                 self.rowDescriptor.value = [self.rowDescriptor.selectorOptions firstObject];
             }
             [self makeRowVisible];
+        } else if (self.rowDescriptor.selectionType == XLFormRowSelectionStyleUndefined) {
+            [self makeRowVisible];
         }
         result = [super becomeFirstResponder];
     }

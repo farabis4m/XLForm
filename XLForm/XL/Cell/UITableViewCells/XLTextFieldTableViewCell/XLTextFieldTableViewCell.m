@@ -56,7 +56,7 @@
 
 - (BOOL)becomeFirstResponder {
     if(self.rowDescriptor.selectionStyle == XLFormRowSelectionStyleUndefined) {
-        return [self.textField becomeFirstResponder];
+        [self.textField becomeFirstResponder];
     }
     return [super becomeFirstResponder];
 }
@@ -79,7 +79,7 @@
 
 - (BOOL)formDescriptorCellBecomeFirstResponder {
     if(self.rowDescriptor.selectionStyle == XLFormRowSelectionStyleUndefined) {
-        return [self.textField becomeFirstResponder];
+        [self.textField becomeFirstResponder];
     }
     return [super formDescriptorCellBecomeFirstResponder];
 }
